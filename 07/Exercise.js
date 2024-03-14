@@ -102,6 +102,10 @@ const arr3 = [
     name: "David",
     age: 20,
   },
+  {
+    name: "Bima",
+    age: 25,
+  },
 ];
 
 const ob = { a: 1, b: 2 };
@@ -117,14 +121,6 @@ const a = [1, 2, 3, 4];
 // const b = a.map((val) => );
 // console.log(b);
 
-function swap(obj) {
-  let result = {};
-  for (let [key, value] of Object.entries(obj)) {
-    result[value] = value in result ? [key].concat(result[value]) : key;
-  }
-  return result;
-}
-
 const sw = (arrObj = []) =>
   arrObj.map((obj) =>
     Object.fromEntries(Object.entries(obj).map(([key, value]) => [value, key]))
@@ -134,6 +130,14 @@ console.log(sw(arr3), "test");
 
 var swapped = arr3.map(swap);
 console.log(swapped);
+
+function swap(obj) {
+  let result = {};
+  for (let [key, value] of Object.entries(obj)) {
+    result[value] = value in result ? [key].con(result[value]) : key;
+  }
+  return result;
+}
 
 //triangle
 function triangle(h) {
